@@ -37,5 +37,10 @@ docker compose up --build
 Then visit in your browser:
 
 http://localhost/service1/ping
+http://localhost/service1/hello
 
 http://localhost/service2/ping
+http://localhost/service2/hello
+
+
+

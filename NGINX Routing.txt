@@ -5,3 +5,32 @@ NGINX listens on port 80 and forwards requests based on path prefixes:
 | --------------- | -------------------------- | ------------- |
 | `/service1`     | Go service (service\_1)    | `8001`        |
 | `/service2`     | Flask service (service\_2) | `8002`        |
+
+
+====================================================================
+vi default.conf
+================
+
+log_format custom '$remote_addr - [$time_local] "$request"';
+
+server {
+    listen 80;
+
+    access_log /var/log/nginx/access.log combined;
+
+    location /service1/ {
+        rewrite ^/service1(/.*)$ $1 break;
+        proxy_pass http://service1:8001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        access_log /var/log/nginx/service1_access.log custom;
+    }
+
+
+    location /service2/ {
+        proxy_pass http://service2:8002/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        access_log /var/log/nginx/service2_access.log custom;
+    }
+}
