@@ -1,0 +1,2 @@
+NGINX uses rewrite to remove /service1 and /service2 before forwarding, 
+so backend apps remain unaware of the proxy prefix.
