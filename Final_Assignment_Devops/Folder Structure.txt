@@ -1,0 +1,11 @@
+Assignment-Project/
+├── docker-compose.yml
+├── nginx/
+│   └── default.conf
+├── service_1/
+│   ├── main.go
+│   └── Dockerfile
+├── service_2/
+│   ├── app.py
+│   └── Dockerfile
+└── README.md

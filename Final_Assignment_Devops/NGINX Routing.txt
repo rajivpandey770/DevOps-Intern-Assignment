@@ -1,0 +1,7 @@
+NGINX listens on port 80 and forwards requests based on path prefixes:
+
+
+| URL Path Prefix | Proxied To                 | Internal Port |
+| --------------- | -------------------------- | ------------- |
+| `/service1`     | Go service (service\_1)    | `8001`        |
+| `/service2`     | Flask service (service\_2) | `8002`        |
