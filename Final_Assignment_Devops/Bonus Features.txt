@@ -1,5 +1,0 @@
-✅ Custom logging in NGINX: logs timestamp and request path to service1_access.log and service2_access.log.
-
-✅ Clean container names
-
-✅ Clean separation of services using individual Dockerfiles
